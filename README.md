@@ -741,6 +741,46 @@ for col in socialfactor_cols:
 
 2.13 Description:
 
+Visualize the distribution of social factor variables (socialfactor_cols) by academic outcome (Target) to identify potential relationships between social factors and the likelihood of
+
+dropping out, staying enrolled, or graduating.
+
+Process:
+
+Iterate through each column in socialfactor_cols:
+
+Group the dataset (groupby) by the current column and Target.
+
+Count the occurrences (size()) and reshape the data with unstack() to create a stacked column format.
+
+If the column is in cat_cols (categorical variables):
+
+Sort the values by the second column (data.columns[1]) in descending order.
+
+Plot the chart:
+
+Figure size: (8, 5).
+
+Type: bar with stacked=True for stacked column visualization.
+
+Colors:
+
+Dropout → #ae3130 (red)
+
+Enrolled → #3b7cb5 (blue)
+
+Graduate → #53c13e (green)
+
+Add labels and title:
+
+X-axis: Name of the current column.
+
+Y-axis: 'Count'.
+
+Title: "Stacked Column Chart of {col} by Target".
+
+2.14
+
 
 
 
